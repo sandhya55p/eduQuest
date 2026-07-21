@@ -25,4 +25,10 @@ public class UserController {
         System.out.println("Login API called");
         return userService.login(loginDTO);
     }
+    @GetMapping("/profile")
+    public String profile(){
+        return "Welcome to EduQuest! You are authenticated .";
+    }
+
+
 }

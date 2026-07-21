@@ -30,7 +30,13 @@ public class SecurityConfig {
                 )
                 //public APIS
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/users/register", "/api/users/login")
+                        .requestMatchers("/api/users/register",
+                                "/api/users/login",
+                                "/api/courses/**",
+                                "/api/lessons/**",
+                                "/api/quizzes/**",
+                                "/api/questions/**",
+                                "/api/progress/**")
                         .permitAll()
                         .anyRequest()
                         .authenticated())
