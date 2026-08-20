@@ -1,11 +1,11 @@
 package com.eduquest.entity;
-
+import com.eduquest.entity.Lesson;
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
 @Table(name="quizzes")
-@Data
+
 @Getter
 @Setter
 @NoArgsConstructor

@@ -49,4 +49,21 @@ public class UserProgressController {
     public List<UserProgress> getProgressByLesson(@PathVariable Long lessonId) {
         return userProgressService.getProgressByLesson(lessonId);
     }
+
+    @PutMapping("/{id}/xp/{xp}")
+    public  UserProgress addXp(@PathVariable Long id,
+                               @PathVariable Integer xp){
+        return  userProgressService.addXp(id,xp);
+    }
+    @PutMapping("/{id}/coins/{coins}")
+    public UserProgress addCoins(@PathVariable Long id,
+                                 @PathVariable Integer coins) {
+        return userProgressService.addCoins(id, coins);
+    }
+
+    @PutMapping("/{id}/level")
+    public UserProgress updateLevel(@PathVariable Long id) {
+        return userProgressService.updateLevel(id);
+    }
+
 }

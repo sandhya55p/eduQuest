@@ -28,6 +28,16 @@ public class User {
 
     @Column(nullable = false)
     private String role;
+    @Column(nullable = false)
+    private Integer totalCoins =0;
+    @Column(nullable = false)
+    private Integer totalXP=0;
+    @Column(nullable = false)
+    private Integer level=1;
+    @Column(nullable = false)
+    private Integer currentStreak = 0;
+    @Column(nullable = false)
+    private Integer longestStreak = 0;
 }
 
 

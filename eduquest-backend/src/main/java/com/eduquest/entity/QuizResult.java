@@ -6,18 +6,16 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "user_progress")
-@Getter
-@Setter
+@Table(name = "quiz_results")
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(exclude = {"user", "lesson"})
-public class UserProgress {
-
+@Getter
+@Setter
+@ToString(exclude =  {"user", "lesson"} )
+public class QuizResult {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
@@ -25,22 +23,20 @@ public class UserProgress {
     @ManyToOne
     @JoinColumn(name = "lesson_id", nullable = false)
     private Lesson lesson;
-
-    private Boolean completed;
-
-    private Integer quizScore;
+     @Column(nullable = false)
+    private Integer score=0;
+     @Column(nullable = false)
+    private Integer totalQuestions=0;
+     @Column(nullable = false)
+    private Integer correctAnswers=0;
+    @Column(nullable = false)
+    private Integer xpEarned = 0;
 
     @Column(nullable = false)
-    private Integer xp = 0;
-
-    @Column(nullable = false)
-    private Integer coins = 0;
-
-    @Column(nullable = false)
-    private Integer level = 1;
-
-    @Column(nullable = false)
-    private Boolean rewardClaimed = false;
+    private Integer coinsEarned = 0;
 
     private LocalDateTime completedAt;
+
+
+
 }

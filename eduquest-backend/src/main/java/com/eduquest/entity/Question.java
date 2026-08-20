@@ -2,7 +2,6 @@ package com.eduquest.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 @Entity
 @Table(name = "questions")
 @Data
